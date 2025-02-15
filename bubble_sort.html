@@ -1,0 +1,32 @@
+<h1>BUBBLE SORT </h1>
+<p><b>Bubble Sort is based on the idea of exchanging two adjacent elements if they have the wrong order. The algorithm works stepping through all elements from left to right, so the largest elements tend to move or "bubble" to the right. That is why the algorithm is called Bubble Sort.</b></p><hr/>
+<h2>Working of Bubble Sort</h2>
+<h4>(Trying to sort in Ascending order) </h4>
+<ol>
+    <li>Starting from the first index, compare the first and the second elements.</li>
+    <li>If the first element is greater than the second element, they are swapped.</li>
+    <li>Now, compare the second and the third elements. Swap them if they are not in order.</li>
+    <li>The above process goes on until the last element.</li>
+</ol>
+<hr>
+<h2>COMPLEXITIES</h2>
+<h4>TIME COMPLEXITY</h4>
+<ul>
+    <li><b>Worst Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>If we want to sort in ascending order and the array is in descending order then the worst case occurs.</p>
+    <li><b>Best Case Complexity: O(n)</b></li>
+    <p>If the array is already sorted, then there is no need for sorting.</p>
+    <li><b>Average Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>It occurs when the elements of the array are in jumbled order (neither ascending nor descending).</p>
+</ul>
+<h4>SPACE COMPLEXITY</h4>
+<ul>
+    <li>Space complexity is <b>O(1)</b> because an extra variable is used for swapping.</li>
+</ul>
+<hr>
+<h2>ALGORITHM</h2>
+<p>bubbleSort(array)<br>
+    for i <- 1 to indexOfLastUnsortedElement-1<br>
+      if leftElement > rightElement<br>
+        swap leftElement and rightElement<br>
+  end bubbleSort</p>

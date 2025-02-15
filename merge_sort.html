@@ -1,0 +1,34 @@
+<h1>MERGE SORT </h1>
+<p><b>Merge Sort is one of the most popular sorting algorithms that is based on the principle of "Divide and Conquer Algorithm".</b><br>
+    A problem is divided into multiple sub-problems. Each sub-problem is solved individually. Finally, sub-problems are combined to form the final solution.
+</p>
+<hr/>
+<h2>Working of Merge Sort</h2>
+<ol>
+    <li>Create duplicate copies of sub-arrays to be sorted</li>
+    <li>Maintain current index of sub-arrays and main array</li>
+    <li> Until we reach the end of either L or M, pick larger among elements L and M and place them in the correct position at A[p..r]</li>
+    <li>When we run out of elements in either L or M, pick up the remaining elements and put in A[p..r]</li>
+</ol>
+<hr>
+<h2>COMPLEXITIES</h2>
+<h4><u>TIME COMPLEXITY</u>/h4>
+<ul>
+    <li><b>Worst Case Complexity: O(n*log n)</b></li>
+    <li><b>Best Case Complexity: O(n*log n)</b></li>
+    <li><b>Average Case Complexity: O(n*log n)</b></li>
+</ul>
+<h4><u>SPACE COMPLEXITY</u></h4>
+<ul>
+    <li>The space complexity of merge sort is <b>O(n)</b>.</li>
+</ul>
+<hr>
+<h2>ALGORITHM</h2>
+<p>MergeSort(A, p, r):<br>
+    if p > r <br>
+        return<br>
+    q = (p+r)/2<br>
+    mergeSort(A, p, q)<br>
+    mergeSort(A, q+1, r)<br>
+    merge(A, p, q, r)</p>
+

@@ -1,0 +1,59 @@
+<h1>HEAP SORT </h1>
+<p><b>Heap Sort is a popular and efficient sorting algorithm in computer programming.To write the heap sort algorithm we require the knowledge of two types of data structures - arrays and trees.</b>
+</p>
+<hr/>
+<h2>Working of HEAP Sort</h2>
+<ol>
+    <li>Since the tree satisfies Max-Heap property, the largest item is stored at the root node.</li>
+    <li><b>Swap:</b> Remove the root element and put at the end of the array (nth position) Put the last item of the tree (heap) at the vacant place.</li>
+    <li><b>Remove:</b> Reduce the size of the heap by 1.</li>
+    <li><b>Heapify:</b> Heapify the root element again so that we have the highest element at root.</li>
+    <li>The process is repeated until all the items of the list are sorted.</li>
+</ol>
+<hr>
+<h2>COMPLEXITIES</h2>
+<h4><u>TIME COMPLEXITY</u></h4>
+<ul>
+    <li><b>Worst Case Complexity: O(n*log n)</b></li>
+    <li><b>Best Case Complexity: O(n*log n)</b></li>
+    <li><b>Average Case Complexity: O(n*log n)</b></li>
+</ul>
+<h4><u>SPACE COMPLEXITY</u></h4>
+<ul>
+    <li>The space complexity of heap sort is <b>O(1)</b>.</li>
+</ul>
+<hr>
+<h2>HEAP SORT PYTHON_CODE</h2>
+<p>
+    def heapify(arr, n, i):<br>
+        # Find largest among root and children<br>
+        largest = i<br>
+        l = 2 * i + 1<br>
+        r = 2 * i + 2<br>
+    
+        if l < n and arr[i] < arr[l]:<br>
+            largest = l<br>
+    
+        if r < n and arr[largest] < arr[r]:<br>
+            largest = r<br>
+    
+        # If root is not largest, swap with largest and continue heapifying<br>
+        if largest != i:<br>
+            arr[i], arr[largest] = arr[largest], arr[i]<br>
+            heapify(arr, n, largest)<br>
+    
+    
+    def heapSort(arr):<br>
+        n = len(arr)<br>
+    
+        # Build max heap<br>
+        for i in range(n//2, -1, -1):<br>
+            heapify(arr, n, i)<br>
+    
+        for i in range(n-1, 0, -1):<br>
+            # Swap<br>
+            arr[i], arr[0] = arr[0], arr[i]<br>
+    
+            # Heapify root element<br>
+            heapify(arr, i, 0)<br>
+</p>

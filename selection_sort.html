@@ -1,0 +1,37 @@
+<h1>SELECTION SORT </h1>
+<p><b>Selection sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.</b></p><hr/>
+<h2>Working of Selection Sort</h2>
+<ol>
+    <li>Set the first element as minimum.</li>
+    <li>Compare minimum with the second element. If the second element is smaller than minimum, assign the second element as minimum.<br>
+        Compare minimum with the third element. Again, if the third element is smaller, then assign minimum to the third element otherwise do nothing. The process goes on until the last element.
+    </li>
+    <li>After each iteration, minimum is placed in the front of the unsorted list.</li>
+    <li>For each iteration, indexing starts from the first unsorted element. Step 1 to 3 are repeated until all the elements are placed at their correct positions.</li>
+</ol>
+<hr>
+<h2>COMPLEXITIES</h2>
+<h4><u>TIME COMPLEXITY</u></h4>
+<ul>
+    <li><b>Worst Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>If we want to sort in ascending order and the array is in descending order then, the worst case occurs.</p>
+    <li><b>Best Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>If the array is already sorted.</p>
+    <li><b>Average Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>It occurs when the elements of the array are in jumbled order (neither ascending nor descending).</p>
+</ul>
+<b>The time complexity of the selection sort is the same in all cases. At every step, you have to find the minimum element and put it in the right place. The minimum element is not known until the end of the array is not reached.</b>
+<h4><u>SPACE COMPLEXITY</u></h4>
+<ul>
+    <li>Space complexity is <b>O(1)</b> because an extra variable is used for swapping.</li>
+</ul>
+<hr>
+<h2>ALGORITHM</h2>
+<p>selectionSort(array, size)<br>
+    repeat (size - 1) times<br>
+    set the first unsorted element as the minimum<br>
+    for each of the unsorted elements<br>
+      if element < currentMinimum<br>
+        set element as new minimum<br>
+    swap minimum with first unsorted position<br>
+  end selectionSort</p>

@@ -1,0 +1,63 @@
+<h1>QUICK SORT </h1>
+<p><b>Quicksort is a sorting algorithm based on the divide and conquer approach where<br>
+    An array is divided into subarrays by selecting a pivot element (element selected from the array).<br>
+    While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.<br>
+    The left and right subarrays are also divided using the same approach. This process continues until each subarray contains a single element.<br>
+    At this point, elements are already sorted. Finally, elements are combined to form a sorted array.</b>
+</p>
+<hr/>
+<h2>Working of QUICK Sort</h2>
+<ol>
+    <li><b>Select the Pivot Element</b></li>
+    <p>There are different variations of quicksort where the pivot element is selected from different positions. Here,the rightmost element of the array is selected as the pivot element.</p>
+    <li><b> Rearrange the Array</b></li>
+    <p>Now,the elements of the array are rearranged so that elements that are smaller than the pivot are put on the left and the elements greater than the pivot are put on the right.</p>
+    <ul>
+        <li>A pointer is fixed at the pivot element. The pivot element is compared with the elements beginning from the first index.</li>
+        <li>If the element is greater than the pivot element, a second pointer is set for that element.</li>
+        <li>Now, pivot is compared with other elements. If an element smaller than the pivot element is reached, the smaller element is swapped with the greater element found earlier.</li>
+        <li>Again, the process is repeated to set the next greater element as the second pointer. And, swap it with another smaller element.</li>
+        <li>The process goes on until the second last element is reached.</li>
+        <li>Finally, the pivot element is swapped with the second pointer.</li>
+    </ul>
+    <li><b>Divide Subarrays</b></li>
+    <p>Pivot elements are again chosen for the left and the right sub-parts separately. And, step 2 is repeated.</p>
+</ol>
+<hr>
+<h2>COMPLEXITIES</h2>
+<h4><u>TIME COMPLEXITY</u></h4>
+<ul>
+    <li><b>Worst Case Complexity: O(n<sup>2</sup>)</b></li>
+    <p>It occurs when the pivot element picked is either the greatest or the smallest element.<br>
+
+        This condition leads to the case in which the pivot element lies in an extreme end of the sorted array. One sub-array is always empty and another sub-array contains n - 1 elements. Thus, quicksort is called only on this sub-array.<br>
+        
+        However, the quicksort algorithm has better performance for scattered pivots.</p>
+    <li><b>Best Case Complexity: O(n*log n)</b></li>
+    <p>It occurs when the pivot element is always the middle element or near to the middle element.</p>
+    <li><b>Average Case Complexity: O(n*log n)</b></li>
+    <p>It occurs when the above conditions do not occur.</p>
+</ul>
+<h4><u>SPACE COMPLEXITY</u></h4>
+<ul>
+    <li>The space complexity of quick sort is <b>O(log n)</b>.</li>
+</ul>
+<hr>
+<h2>ALGORITHM</h2>
+<p>
+quickSort(array, leftmostIndex, rightmostIndex)<br>
+  if (leftmostIndex < rightmostIndex)<br>
+    pivotIndex <- partition(array,leftmostIndex, rightmostIndex)<br>
+    quickSort(array, leftmostIndex, pivotIndex - 1)<br>
+    quickSort(array, pivotIndex, rightmostIndex)<br>
+
+partition(array, leftmostIndex, rightmostIndex)<br>
+  set rightmostIndex as pivotIndex<br>
+  storeIndex <- leftmostIndex - 1<br>
+  for i <- leftmostIndex + 1 to rightmostIndex<br>
+  if element[i] < pivotElement<br>
+    swap element[i] and element[storeIndex]<br>
+    storeIndex++<br>
+  swap pivotElement and element[storeIndex+1]<br>
+return storeIndex + 1</p>
+
